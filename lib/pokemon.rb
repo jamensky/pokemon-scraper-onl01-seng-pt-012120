@@ -8,14 +8,15 @@ class Pokemon
     @db = db
   end
 
-  def self.save(name, type, db)
+  def self.save(id=nil, name, type, db)
      sql = 'INSERT INTO pokemon(name, type) VALUES(?, ?)'
      db.execute(sql, name, type)
   end
 
   def self.find(id, db)
     sql = 'SELECT * FROM pokemon WHERE id = ?'
-    db.execute(sql, id)[0]
+    pokemon = db.execute(sql, id)[0]
+    self.save(pokemon[0],)
     #binding.pry
   end
 

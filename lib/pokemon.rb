@@ -14,5 +14,7 @@ class Pokemon
   end
 
   def self.find(id, db)
+    sql = 'SELECT * FROM pokemon'
+  end 
 
 end

@@ -17,6 +17,7 @@ class Pokemon
     sql = 'SELECT * FROM pokemon WHERE id = ?'
     pokemon = db.execute(sql, id)[0]
     create_pokemon = self.new(pokemon[0], pokemon[1], pokemon[2])
+    create_pokemon
     #binding.pry
   end
 
